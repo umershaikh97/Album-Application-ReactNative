@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import Button from './Button';
+import Card from './Card';
+import CardSection from './CardSection';
 
 
 
@@ -12,7 +14,6 @@ const handleBuyNow = (url) =>{
 
 
 
-
 const AlbumDetail = (props) =>{
 
     const {thumbnail_image, title, artist, image} = props.album;
@@ -20,10 +21,10 @@ const AlbumDetail = (props) =>{
 
     return(
 
-        <View style={styles.cardStyle}> 
+        <Card> 
             
             {/* Card Header Section */}
-            <View style={styles.cardSectionStyle}> 
+            <CardSection> 
             
             <View style={styles.thumbnailContainerStyle}>
                 <Image
@@ -37,31 +38,31 @@ const AlbumDetail = (props) =>{
             <Text style={styles.textStyle}>{artist}</Text>
             </View>
 
-            </View>
+            </CardSection>
 
 
 
 
 
             {/* Album Image Section */}
-            <View style={styles.cardSectionStyle}>
+            <CardSection>
             <Image
             style={styles.imageStyle}
             source={{uri: image}} />
-            </View>
+            </CardSection>
 
 
             {/* Buy Button Section */}
-            <View style={styles.cardSectionStyle}>
+            <CardSection>
 
             <Button btnText="Buy Now" onPress={() => handleBuyNow(props.album.url)} />
 
-            </View>
+            </CardSection>
 
 
 
             
-        </View>
+        </Card>
     );
 
 
@@ -87,24 +88,6 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
 
-    cardSectionStyle : {
-        borderBottomWidth: 1,
-        padding: 5,
-        backgroundColor: '#fff',
-        justifyContent: 'flex-start',
-        flexDirection: 'row',
-        borderColor: '#ddd',
-        position: 'relative'
-    },
-
-    cardStyle : {
-        borderWidth: 1,  // border 1px
-        borderRadius: 2,  // rounded corners
-        borderColor: '#ddd',
-        marginTop: 10,
-        marginLeft: 5,
-        marginRight: 5  
-    },
     thumbnailStyle: {
         height: 50,
         width: 50
