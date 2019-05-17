@@ -1,18 +1,28 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Header from './components/Header';
 import AlbumList from './components/AlbumList';
 
 
 const App = () => {
     return (
-        <View>
+        <View style={style.container}>
         <Header headerText={"Albums"} />
         <AlbumList />
         </View>
     );
 
 }
+
+const style = StyleSheet.create({
+    container:{
+        flex: 1
+    }
+});
+
+
+
+
 
 export default App;
 

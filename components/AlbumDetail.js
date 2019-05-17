@@ -13,7 +13,6 @@ const handleBuyNow = (url) =>{
 
 
 
-
 const AlbumDetail = (props) =>{
 
     const {thumbnail_image, title, artist, image} = props.album;
